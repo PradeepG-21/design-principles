@@ -23,3 +23,30 @@ It delivers superior flexibility and minimizes code reuse.
 Strategy pattern is favourable when behaviors are shared not Parent-Child in a heirarchy tree, but across siblings.
 
 Each entity is represented as a composition of its behaviors. Each behavior can have different implementations and can be interchangeable.
+```mermaid
+---
+title: Strategy Pattern
+---
+classDiagram
+class Client {
+IBehavior behavior
+execute()
+}
+
+note for IBehaviour "Each Behavior is a strategy"
+class IBehavior {
+run()
+}
+
+class ConcreteBehaviorA {
+run()
+}
+
+class ConcreteBehaviorB {
+run()
+}
+
+IBehavior <-- Client
+IBehavior <|-- ConcreteBehaviorA
+IBehavior <|-- ConcreteBehaviorB
+```
